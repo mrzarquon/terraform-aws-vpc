@@ -367,7 +367,11 @@ resource "aws_subnet" "public" {
   assign_ipv6_address_on_creation = var.public_subnet_assign_ipv6_address_on_creation == null ? var.assign_ipv6_address_on_creation : var.public_subnet_assign_ipv6_address_on_creation
 
   ipv6_cidr_block = var.enable_ipv6 && length(var.public_subnet_ipv6_prefixes) > 0 ? cidrsubnet(aws_vpc.this[0].ipv6_cidr_block, 8, var.public_subnet_ipv6_prefixes[count.index]) : null
-
+  
+  private_dns_hostname_type_on_launch           = var.public_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.public_subnet_private_dns_hostname_type_on_launch
+  enable_resource_name_dns_a_record_on_launch   = var.public_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.public_subnet_enable_resource_name_dns_a_record_on_launch
+  enable_resource_name_dns_aaa_record_on_launch = var.public_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.public_subnet_enable_resource_name_dns_aaa_record_on_launch
+  
   tags = merge(
     {
       Name = try(
@@ -395,7 +399,11 @@ resource "aws_subnet" "private" {
   assign_ipv6_address_on_creation = var.private_subnet_assign_ipv6_address_on_creation == null ? var.assign_ipv6_address_on_creation : var.private_subnet_assign_ipv6_address_on_creation
 
   ipv6_cidr_block = var.enable_ipv6 && length(var.private_subnet_ipv6_prefixes) > 0 ? cidrsubnet(aws_vpc.this[0].ipv6_cidr_block, 8, var.private_subnet_ipv6_prefixes[count.index]) : null
-
+  
+  private_dns_hostname_type_on_launch           = var.private_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.private_subnet_private_dns_hostname_type_on_launch
+  enable_resource_name_dns_a_record_on_launch   = var.private_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.private_subnet_enable_resource_name_dns_a_record_on_launch
+  enable_resource_name_dns_aaa_record_on_launch = var.private_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.private_subnet_enable_resource_name_dns_aaa_record_on_launch
+  
   tags = merge(
     {
       Name = try(
@@ -422,7 +430,11 @@ resource "aws_subnet" "outpost" {
   assign_ipv6_address_on_creation = var.outpost_subnet_assign_ipv6_address_on_creation == null ? var.assign_ipv6_address_on_creation : var.outpost_subnet_assign_ipv6_address_on_creation
 
   ipv6_cidr_block = var.enable_ipv6 && length(var.outpost_subnet_ipv6_prefixes) > 0 ? cidrsubnet(aws_vpc.this[0].ipv6_cidr_block, 8, var.outpost_subnet_ipv6_prefixes[count.index]) : null
-
+  
+  private_dns_hostname_type_on_launch           = var.outpost_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.outpost_subnet_private_dns_hostname_type_on_launch
+  enable_resource_name_dns_a_record_on_launch   = var.outpost_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.outpost_subnet_enable_resource_name_dns_a_record_on_launch
+  enable_resource_name_dns_aaa_record_on_launch = var.outpost_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.outpost_subnet_enable_resource_name_dns_aaa_record_on_launch
+  
   outpost_arn = var.outpost_arn
 
   tags = merge(
@@ -451,7 +463,11 @@ resource "aws_subnet" "database" {
   assign_ipv6_address_on_creation = var.database_subnet_assign_ipv6_address_on_creation == null ? var.assign_ipv6_address_on_creation : var.database_subnet_assign_ipv6_address_on_creation
 
   ipv6_cidr_block = var.enable_ipv6 && length(var.database_subnet_ipv6_prefixes) > 0 ? cidrsubnet(aws_vpc.this[0].ipv6_cidr_block, 8, var.database_subnet_ipv6_prefixes[count.index]) : null
-
+  
+  private_dns_hostname_type_on_launch           = var.database_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.database_subnet_private_dns_hostname_type_on_launch
+  enable_resource_name_dns_a_record_on_launch   = var.database_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.database_subnet_enable_resource_name_dns_a_record_on_launch
+  enable_resource_name_dns_aaa_record_on_launch = var.database_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.database_subnet_enable_resource_name_dns_aaa_record_on_launch
+  
   tags = merge(
     {
       Name = try(
@@ -494,7 +510,11 @@ resource "aws_subnet" "redshift" {
   assign_ipv6_address_on_creation = var.redshift_subnet_assign_ipv6_address_on_creation == null ? var.assign_ipv6_address_on_creation : var.redshift_subnet_assign_ipv6_address_on_creation
 
   ipv6_cidr_block = var.enable_ipv6 && length(var.redshift_subnet_ipv6_prefixes) > 0 ? cidrsubnet(aws_vpc.this[0].ipv6_cidr_block, 8, var.redshift_subnet_ipv6_prefixes[count.index]) : null
-
+  
+  private_dns_hostname_type_on_launch           = var.redshift_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.redshift_subnet_private_dns_hostname_type_on_launch
+  enable_resource_name_dns_a_record_on_launch   = var.redshift_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.redshift_subnet_enable_resource_name_dns_a_record_on_launch
+  enable_resource_name_dns_aaa_record_on_launch = var.redshift_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.redshift_subnet_enable_resource_name_dns_aaa_record_on_launch
+  
   tags = merge(
     {
       Name = try(
@@ -535,7 +555,11 @@ resource "aws_subnet" "elasticache" {
   assign_ipv6_address_on_creation = var.elasticache_subnet_assign_ipv6_address_on_creation == null ? var.assign_ipv6_address_on_creation : var.elasticache_subnet_assign_ipv6_address_on_creation
 
   ipv6_cidr_block = var.enable_ipv6 && length(var.elasticache_subnet_ipv6_prefixes) > 0 ? cidrsubnet(aws_vpc.this[0].ipv6_cidr_block, 8, var.elasticache_subnet_ipv6_prefixes[count.index]) : null
-
+  
+  private_dns_hostname_type_on_launch           = var.elasticache_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.elasticache_subnet_private_dns_hostname_type_on_launch
+  enable_resource_name_dns_a_record_on_launch   = var.elasticache_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.elasticache_subnet_enable_resource_name_dns_a_record_on_launch
+  enable_resource_name_dns_aaa_record_on_launch = var.elasticache_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.elasticache_subnet_enable_resource_name_dns_aaa_record_on_launch
+  
   tags = merge(
     {
       Name = try(
@@ -576,7 +600,11 @@ resource "aws_subnet" "intra" {
   assign_ipv6_address_on_creation = var.intra_subnet_assign_ipv6_address_on_creation == null ? var.assign_ipv6_address_on_creation : var.intra_subnet_assign_ipv6_address_on_creation
 
   ipv6_cidr_block = var.enable_ipv6 && length(var.intra_subnet_ipv6_prefixes) > 0 ? cidrsubnet(aws_vpc.this[0].ipv6_cidr_block, 8, var.intra_subnet_ipv6_prefixes[count.index]) : null
-
+  
+  private_dns_hostname_type_on_launch           = var.intra_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.intra_subnet_private_dns_hostname_type_on_launch
+  enable_resource_name_dns_a_record_on_launch   = var.intra_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.intra_subnet_enable_resource_name_dns_a_record_on_launch
+  enable_resource_name_dns_aaa_record_on_launch = var.intra_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.intra_subnet_enable_resource_name_dns_aaa_record_on_launch
+  
   tags = merge(
     {
       Name = try(

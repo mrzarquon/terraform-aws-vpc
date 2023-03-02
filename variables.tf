@@ -112,6 +112,155 @@ variable "intra_subnet_assign_ipv6_address_on_creation" {
   default     = null
 }
 
+variable "private_dns_hostname_type_on_launch" {
+  description = "Assign DNS hostnames as either ip-name or resource-name"
+  type        = string
+  default     = "ip-name"
+  validation {
+    condition = can(regex("^(ip-name|resource-name)$",
+    var.flow_log_file_format))
+    error_message = "ERROR valid values: ip-name, resource-name."
+  }
+}
+
+variable "private_subnet_private_dns_hostname_type_on_launch" {
+  description = "Assign DNS hostnames as either ip-name or resource-name on private subnet"
+  type        = string
+  default     = null
+}
+
+variable "public_subnet_private_dns_hostname_type_on_launch" {
+  description = "Assign DNS hostnames as either ip-name or resource-name on public subnet"
+  type        = string
+  default     = null
+}
+
+variable "outpost_subnet_private_dns_hostname_type_on_launch" {
+  description = "Assign DNS hostnames as either ip-name or resource-name on outpost subnet"
+  type        = string
+  default     = null
+}
+
+variable "database_subnet_private_dns_hostname_type_on_launch" {
+  description = "Assign DNS hostnames as either ip-name or resource-name on database subnet"
+  type        = string
+  default     = null
+}
+
+variable "redshift_subnet_private_dns_hostname_type_on_launch" {
+  description = "Assign DNS hostnames as either ip-name or resource-name on redshift subnet"
+  type        = string
+  default     = null
+}
+
+variable "elasticache_subnet_private_dns_hostname_type_on_launch" {
+  description = "Assign DNS hostnames as either ip-name or resource-name on elasticache subnet"
+  type        = string
+  default     = null
+}
+
+variable "intra_subnet_private_dns_hostname_type_on_launch" {
+  description = "Assign DNS hostnames as either ip-name or resource-name on intra subnet"
+  type        = string
+  default     = null
+}
+
+variable "enable_resource_name_dns_a_record_on_launch" {
+  description = "Enable resource-name A records on launch"
+  type        = bool
+  default     = false
+}
+
+variable "private_subnet_enable_resource_name_dns_a_record_on_launch" {
+  description = "Enable resource-name A records on launch on private subnet"
+  type        = bool
+  default     = null
+}
+
+variable "public_subnet_enable_resource_name_dns_a_record_on_launch" {
+  description = "Enable resource-name A records on launch on public subnet"
+  type        = bool
+  default     = null
+}
+
+variable "outpost_subnet_enable_resource_name_dns_a_record_on_launch" {
+  description = "Enable resource-name A records on launch on outpost subnet"
+  type        = bool
+  default     = null
+}
+
+variable "database_subnet_enable_resource_name_dns_a_record_on_launch" {
+  description = "Enable resource-name A records on launch on database subnet"
+  type        = string
+  default     = null
+}
+
+variable "redshift_subnet_enable_resource_name_dns_a_record_on_launch" {
+  description = "Enable resource-name A records on launch on redshift subnet"
+  type        = bool
+  default     = null
+}
+
+variable "elasticache_subnet_enable_resource_name_dns_a_record_on_launch" {
+  description = "Enable resource-name A records on launch on elasticache subnet"
+  type        = bool
+  default     = null
+}
+
+variable "intra_subnet_private_enable_resource_name_dns_a_record_on_launch" {
+  description = "Enable resource-name A records on launch on intra subnet"
+  type        = bool
+  default     = null
+}
+
+variable "enable_resource_name_dns_aaa_record_on_launch" {
+  description = "Enable resource-name AAA records on launch"
+  type        = bool
+  default     = null
+}
+
+variable "private_subnet_enable_resource_name_dns_aaa_record_on_launch" {
+  description = "Enable resource-name AAA records on launch on private subnet"
+  type        = bool
+  default     = null
+}
+
+variable "public_subnet_enable_resource_name_dns_aaa_record_on_launch" {
+  description = "Enable resource-name AAA records on launch on public subnet"
+  type        = bool
+  default     = null
+}
+
+variable "outpost_subnet_enable_resource_name_dns_aaa_record_on_launch" {
+  description = "Enable resource-name AAA records on launch on outpost subnet"
+  type        = bool
+  default     = null
+}
+
+variable "database_subnet_enable_resource_name_dns_aaa_record_on_launch" {
+  description = "Enable resource-name AAA records on launch on database subnet"
+  type        = string
+  default     = null
+}
+
+variable "redshift_subnet_enable_resource_name_dns_aaa_record_on_launch" {
+  description = "Enable resource-name AAA records on launch on redshift subnet"
+  type        = bool
+  default     = null
+}
+
+variable "elasticache_subnet_enable_resource_name_dns_aaa_record_on_launch" {
+  description = "Enable resource-name AAA records on launch on elasticache subnet"
+  type        = bool
+  default     = null
+}
+
+variable "intra_subnet_private_enable_resource_name_dns_aaa_record_on_launch" {
+  description = "Enable resource-name AAA records on launch on intra subnet"
+  type        = bool
+  default     = null
+}
+
 variable "secondary_cidr_blocks" {
   description = "List of secondary CIDR blocks to associate with the VPC to extend the IP Address pool"
   type        = list(string)
