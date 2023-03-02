@@ -118,7 +118,7 @@ variable "private_dns_hostname_type_on_launch" {
   default     = "ip-name"
   validation {
     condition = can(regex("^(ip-name|resource-name)$",
-    var.flow_log_file_format))
+    var.private_dns_hostname_type_on_launch))
     error_message = "ERROR valid values: ip-name, resource-name."
   }
 }
