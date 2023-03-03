@@ -213,50 +213,50 @@ variable "intra_subnet_private_enable_resource_name_dns_a_record_on_launch" {
   default     = null
 }
 
-variable "enable_resource_name_dns_aaa_record_on_launch" {
-  description = "Enable resource-name AAA records on launch"
+variable "enable_resource_name_dns_aaaa_record_on_launch" {
+  description = "Enable resource-name AAAA records on launch"
   type        = bool
   default     = null
 }
 
-variable "private_subnet_enable_resource_name_dns_aaa_record_on_launch" {
-  description = "Enable resource-name AAA records on launch on private subnet"
+variable "private_subnet_enable_resource_name_dns_aaaa_record_on_launch" {
+  description = "Enable resource-name AAAA records on launch on private subnet"
   type        = bool
   default     = null
 }
 
-variable "public_subnet_enable_resource_name_dns_aaa_record_on_launch" {
-  description = "Enable resource-name AAA records on launch on public subnet"
+variable "public_subnet_enable_resource_name_dns_aaaa_record_on_launch" {
+  description = "Enable resource-name AAAA records on launch on public subnet"
   type        = bool
   default     = null
 }
 
-variable "outpost_subnet_enable_resource_name_dns_aaa_record_on_launch" {
-  description = "Enable resource-name AAA records on launch on outpost subnet"
+variable "outpost_subnet_enable_resource_name_dns_aaaa_record_on_launch" {
+  description = "Enable resource-name AAAA records on launch on outpost subnet"
   type        = bool
   default     = null
 }
 
-variable "database_subnet_enable_resource_name_dns_aaa_record_on_launch" {
-  description = "Enable resource-name AAA records on launch on database subnet"
+variable "database_subnet_enable_resource_name_dns_aaaa_record_on_launch" {
+  description = "Enable resource-name AAAA records on launch on database subnet"
   type        = string
   default     = null
 }
 
-variable "redshift_subnet_enable_resource_name_dns_aaa_record_on_launch" {
-  description = "Enable resource-name AAA records on launch on redshift subnet"
+variable "redshift_subnet_enable_resource_name_dns_aaaa_record_on_launch" {
+  description = "Enable resource-name AAAA records on launch on redshift subnet"
   type        = bool
   default     = null
 }
 
-variable "elasticache_subnet_enable_resource_name_dns_aaa_record_on_launch" {
-  description = "Enable resource-name AAA records on launch on elasticache subnet"
+variable "elasticache_subnet_enable_resource_name_dns_aaaa_record_on_launch" {
+  description = "Enable resource-name AAAA records on launch on elasticache subnet"
   type        = bool
   default     = null
 }
 
-variable "intra_subnet_private_enable_resource_name_dns_aaa_record_on_launch" {
-  description = "Enable resource-name AAA records on launch on intra subnet"
+variable "intra_subnet_private_enable_resource_name_dns_aaaa_record_on_launch" {
+  description = "Enable resource-name AAAA records on launch on intra subnet"
   type        = bool
   default     = null
 }

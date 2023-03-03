@@ -370,7 +370,7 @@ resource "aws_subnet" "public" {
   
   private_dns_hostname_type_on_launch           = var.public_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.public_subnet_private_dns_hostname_type_on_launch
   enable_resource_name_dns_a_record_on_launch   = var.public_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.public_subnet_enable_resource_name_dns_a_record_on_launch
-  enable_resource_name_dns_aaa_record_on_launch = var.public_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.public_subnet_enable_resource_name_dns_aaa_record_on_launch
+  enable_resource_name_dns_aaaa_record_on_launch = var.public_subnet_enable_resource_name_dns_aaaa_record_on_launch == null ? var.enable_resource_name_dns_aaaa_record_on_launch : var.public_subnet_enable_resource_name_dns_aaaa_record_on_launch
   
   tags = merge(
     {
@@ -402,7 +402,7 @@ resource "aws_subnet" "private" {
   
   private_dns_hostname_type_on_launch           = var.private_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.private_subnet_private_dns_hostname_type_on_launch
   enable_resource_name_dns_a_record_on_launch   = var.private_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.private_subnet_enable_resource_name_dns_a_record_on_launch
-  enable_resource_name_dns_aaa_record_on_launch = var.private_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.private_subnet_enable_resource_name_dns_aaa_record_on_launch
+  enable_resource_name_dns_aaaa_record_on_launch = var.private_subnet_enable_resource_name_dns_aaaa_record_on_launch == null ? var.enable_resource_name_dns_aaaa_record_on_launch : var.private_subnet_enable_resource_name_dns_aaaa_record_on_launch
   
   tags = merge(
     {
@@ -433,7 +433,7 @@ resource "aws_subnet" "outpost" {
   
   private_dns_hostname_type_on_launch           = var.outpost_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.outpost_subnet_private_dns_hostname_type_on_launch
   enable_resource_name_dns_a_record_on_launch   = var.outpost_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.outpost_subnet_enable_resource_name_dns_a_record_on_launch
-  enable_resource_name_dns_aaa_record_on_launch = var.outpost_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.outpost_subnet_enable_resource_name_dns_aaa_record_on_launch
+  enable_resource_name_dns_aaaa_record_on_launch = var.outpost_subnet_enable_resource_name_dns_aaaa_record_on_launch == null ? var.enable_resource_name_dns_aaaa_record_on_launch : var.outpost_subnet_enable_resource_name_dns_aaaa_record_on_launch
   
   outpost_arn = var.outpost_arn
 
@@ -466,7 +466,7 @@ resource "aws_subnet" "database" {
   
   private_dns_hostname_type_on_launch           = var.database_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.database_subnet_private_dns_hostname_type_on_launch
   enable_resource_name_dns_a_record_on_launch   = var.database_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.database_subnet_enable_resource_name_dns_a_record_on_launch
-  enable_resource_name_dns_aaa_record_on_launch = var.database_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.database_subnet_enable_resource_name_dns_aaa_record_on_launch
+  enable_resource_name_dns_aaaa_record_on_launch = var.database_subnet_enable_resource_name_dns_aaaa_record_on_launch == null ? var.enable_resource_name_dns_aaaa_record_on_launch : var.database_subnet_enable_resource_name_dns_aaaa_record_on_launch
   
   tags = merge(
     {
@@ -513,7 +513,7 @@ resource "aws_subnet" "redshift" {
   
   private_dns_hostname_type_on_launch           = var.redshift_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.redshift_subnet_private_dns_hostname_type_on_launch
   enable_resource_name_dns_a_record_on_launch   = var.redshift_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.redshift_subnet_enable_resource_name_dns_a_record_on_launch
-  enable_resource_name_dns_aaa_record_on_launch = var.redshift_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.redshift_subnet_enable_resource_name_dns_aaa_record_on_launch
+  enable_resource_name_dns_aaaa_record_on_launch = var.redshift_subnet_enable_resource_name_dns_aaaa_record_on_launch == null ? var.enable_resource_name_dns_aaaa_record_on_launch : var.redshift_subnet_enable_resource_name_dns_aaaa_record_on_launch
   
   tags = merge(
     {
@@ -558,7 +558,7 @@ resource "aws_subnet" "elasticache" {
   
   private_dns_hostname_type_on_launch           = var.elasticache_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.elasticache_subnet_private_dns_hostname_type_on_launch
   enable_resource_name_dns_a_record_on_launch   = var.elasticache_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.elasticache_subnet_enable_resource_name_dns_a_record_on_launch
-  enable_resource_name_dns_aaa_record_on_launch = var.elasticache_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.elasticache_subnet_enable_resource_name_dns_aaa_record_on_launch
+  enable_resource_name_dns_aaaa_record_on_launch = var.elasticache_subnet_enable_resource_name_dns_aaaa_record_on_launch == null ? var.enable_resource_name_dns_aaaa_record_on_launch : var.elasticache_subnet_enable_resource_name_dns_aaaa_record_on_launch
   
   tags = merge(
     {
@@ -603,7 +603,7 @@ resource "aws_subnet" "intra" {
   
   private_dns_hostname_type_on_launch           = var.intra_subnet_private_dns_hostname_type_on_launch == null ? var.private_dns_hostname_type_on_launch : var.intra_subnet_private_dns_hostname_type_on_launch
   enable_resource_name_dns_a_record_on_launch   = var.intra_subnet_enable_resource_name_dns_a_record_on_launch == null ? var.enable_resource_name_dns_a_record_on_launch : var.intra_subnet_enable_resource_name_dns_a_record_on_launch
-  enable_resource_name_dns_aaa_record_on_launch = var.intra_subnet_enable_resource_name_dns_aaa_record_on_launch == null ? var.enable_resource_name_dns_aaa_record_on_launch : var.intra_subnet_enable_resource_name_dns_aaa_record_on_launch
+  enable_resource_name_dns_aaaa_record_on_launch = var.intra_subnet_enable_resource_name_dns_aaaa_record_on_launch == null ? var.enable_resource_name_dns_aaaa_record_on_launch : var.intra_subnet_enable_resource_name_dns_aaaa_record_on_launch
   
   tags = merge(
     {
