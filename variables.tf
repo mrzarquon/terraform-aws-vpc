@@ -207,7 +207,7 @@ variable "elasticache_subnet_enable_resource_name_dns_a_record_on_launch" {
   default     = null
 }
 
-variable "intra_subnet_private_enable_resource_name_dns_a_record_on_launch" {
+variable "intra_subnet_enable_resource_name_dns_a_record_on_launch" {
   description = "Enable resource-name A records on launch on intra subnet"
   type        = bool
   default     = null
@@ -255,7 +255,7 @@ variable "elasticache_subnet_enable_resource_name_dns_aaaa_record_on_launch" {
   default     = null
 }
 
-variable "intra_subnet_private_enable_resource_name_dns_aaaa_record_on_launch" {
+variable "intra_subnet_enable_resource_name_dns_aaaa_record_on_launch" {
   description = "Enable resource-name AAAA records on launch on intra subnet"
   type        = bool
   default     = null
